@@ -1,27 +1,50 @@
-# Introduction
-    This is a Python script that posts a tweet every hour, randomly selected from a specified Twitter user's timeline.
+# Twitter Bot 
 
-# Requirements
-    •	Python 3
-    •	tweepy (a Python wrapper for the Twitter API)
-    •	schedule (a Python job scheduling library)
-    •	Twitter developer account and credentials (consumer key, consumer secret, access token, and access token secret)
-# Usage
-    1.	Clone or download the script to your local machine.
-    2.	Install the required libraries by running pip install tweepy schedule in your command line.
-    3.	Replace the placeholder strings in the OAuthHandler and set_access_token methods with your own Twitter developer credentials.
-    4.	Replace "username" in the get_tweets function with the Twitter username of the account you want to pull tweets from.
-    5.	Run the script with python [scriptname].py in your command line.
+## Table of Contents
 
-# How the script works
-    •	The script authenticates to the Twitter API using the provided developer credentials and creates an API object.
-    •	The script defines a refresh_access_token function that is called every hour to refresh the access token if it has expired.
-    •	The script defines a get_tweets function that pulls some tweets from the specified user's timeline and returns them as a list.
-    •	The script defines a post_tweet function that selects a random tweet from the list of tweets returned by get_tweets, posts it to the authenticated user's Twitter account, and logs the tweet's text to the console. If th tweet is duplicate, it skips that particulr tweet.
-    •	The script uses the schedule library to schedule the time_left function to run every hour, the schedule_tweets function to run every hour, and the refresh_access_token function to run every 60 minutes.
-    •	The script enters an infinite loop in which it runs any scheduled functions that are pending and then sleeps for 1 second.
-# Note
-    •	This script is intended for educational or demonstration purposes only and is not suitable for production use.
-    •	Make sure to check the twitter API policies about posting tweets, so that you don't end up violating any of the policies
-    •	You should also handle the exception properly, in case of any error or exception occurs, in order to fix the issue with your script
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Usage](#usage)
+- [Contributing](../CONTRIBUTING.md)
 
+## About <a name = "about"></a>
+
+This script is a Python bot that posts tweets from a given user's timeline every hour.
+
+## Getting Started <a name = "getting_started"></a>
+
+Add your Twitter API credentials in the specified place in the script.
+
+You can change the target user by replacing 'username' with the desired username
+Run the script.
+
+### Prerequisites
+
+In order to run the above script, you will need to have Python and the following libraries installed:
+
+   - tweepy
+   - schedule
+   - twitter
+
+You also need to have a developer account of twitter and setup access keys and tokens.
+
+### Installing
+
+You can install them using pip by running the command pip install tweepy schedule twitter on the command line.
+You also need to have a developer account of twitter and setup access keys and tokens.
+
+    >pip install tweepy
+    >pip install twitter
+    >pip install schedule
+
+The code uses your twitter developer account's access keys and tokens to authenticate and interact with the twitter API. The script uses the tweepy library to interact with the Twitter API.
+
+## Usage <a name = "usage"></a>
+
+Make sure to keep the script running in order for the tweets to be posted at regular intervals.
+
+The script will now post a random tweet from the given user's timeline every hour, and also logs the time at which the tweet was posted.
+
+You can change the scheduling time by modifying the value of the "schedule.every(60).minutes.do(schedule_tweets)" line in the script.
+
+Also, you can use this script locally on your computer, but you need to keep in mind that if your computer shutdowns or restart during execution of the script, the tweets will not be posted.
