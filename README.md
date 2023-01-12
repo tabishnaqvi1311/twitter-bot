@@ -33,18 +33,19 @@ You also need to have a developer account of twitter and setup access keys and t
 You can install them using pip by running the command pip install tweepy schedule twitter on the command line.
 You also need to have a developer account of twitter and setup access keys and tokens.
 
-    >pip install tweepy
-    >pip install twitter
-    >pip install schedule
+    pip install tweepy
+    pip install twitter
+    pip install schedule
 
 The code uses your twitter developer account's access keys and tokens to authenticate and interact with the twitter API. The script uses the tweepy library to interact with the Twitter API.
 
 ## Usage <a name = "usage"></a>
 
 Make sure to keep the script running in order for the tweets to be posted at regular intervals.
+You can use a cloud/hosting service, I used PythonAnywhere
 
 The script will now post a random tweet from the given user's timeline every hour, and also logs the time at which the tweet was posted.
 
 You can change the scheduling time by modifying the value of the "schedule.every(60).minutes.do(schedule_tweets)" line in the script.
 
-Also, you can use this script locally on your computer, but you need to keep in mind that if your computer shutdowns or restart during execution of the script, the tweets will not be posted.
+Also, you can use this script locally on your computer.
