@@ -32,7 +32,7 @@ def post_tweet(tweet):
     print("\n")
 
 def schedule_tweets():
-    tweets = get_tweets("hi1ar10us")
+    tweets = get_tweets("INSERT USERNAME HERE")
     tweet = random.choice(tweets)
     print("Fetched Tweet : " + tweet.text)
     post_tweet(tweet)
