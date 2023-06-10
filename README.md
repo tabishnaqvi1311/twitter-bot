@@ -1,5 +1,8 @@
 # Twitter Bot 
 
+## PSA
+#### this bot no longer works since the twitter API is paid! However, the code is still available, albeit read-only.
+
 ## Table of Contents
 
 - [About](#about)
